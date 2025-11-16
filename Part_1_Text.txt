@@ -1,0 +1,44 @@
+Part 1: Subprograms (15 points)
+
+Define and explain the concept of a subprogram in programming languages.
+
+A subprogram is a repeatable sequence of instructions that is called by other locations in a program. Depending on the specific programming language, a subprogram can be called a subroutine, function, method, etc..
+Subprograms all have a single entry point. They can only be executed one at a time; they cannot be executed simultaneously. After that, the execution terminates, and the control returns to the caller. Most subprograms are named.
+Subprograms are collections of statements that define parameterized computations.
+
+Differentiate between procedures and functions. Provide examples to illustrate the distinction (in any language you want).
+
+
+Procedures and functions are the two types of subprograms. 
+Functions return values. Procedures do not return values.
+In some cases, functions can be defined to be used as procedures.
+Procedures define new statements. Fortran and Ada are older languages that support procedures.
+Procedures return results by modifying non-parameter variables or by altering formal parameters. In both cases, the caller observes changes after the procedure is executed.
+Functions ideally cause no side effects and return a single value. Functions are sometimes used to modify parameters or external variables. Functions are invoked within expressions, and the returned value replaces the function call itself. Functions act as user-defined operators.
+---------------------------------
+Procedure-like example in Python:
+
+	counter = 0
+	def increment():
+		global counter
+		counter += 1
+
+	increment()
+	print(counter) # Output: 1
+------------------------------------
+Function example in Python:
+	
+	def add(a, b):
+		return a + b
+
+	result = add(3, 4)
+	print(result) # Output: 7
+------------------------------------
+	
+
+Discuss the advantages and disadvantages of using subprograms in software development.
+
+Subprograms are able to break a large program into smaller, self-contained units, making the code easier to manage. Subprograms can also be reused in many places. Abstraction is a good part of subprograms because it allows programmers to use functionality without needing to understand the internal systems.
+Subprograms can impact the performance because calling subprograms adds call/return overhead. Too many subprograms can fragment the code and make control flow harder to follow.
+
+
