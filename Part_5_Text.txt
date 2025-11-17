@@ -1,0 +1,31 @@
+Part 5: Functions as Parameters (15 points) (read sections 9.6 and 9.7)
+
+
+	Discuss the concept of functions as parameters and its significance in programming.
+
+Functions are parameters refers to the ability to pass a function as an argument to another function. This is significant because it allows programmers to create flexible and reusable code. This allows for the creation of paradigms like callbacks, event handling, and functional programming techniques.
+
+	Provide examples demonstrating the use of functions as parameters (in any language you want).
+-----------------------------------------------------------------
+Python
+def greet(name):
+    return f"Hello, {name}!"
+
+def run_callback(func, value):
+    return func(value)
+
+print(run_callback(greet, "Alice"))   # passes greet() as a parameter
+---------------------------------------------------------------
+
+def by_length(word):
+    return len(word)
+
+words = ["banana", "passionfruit", "orange"]
+sorted_words = sorted(words, key=by_length)
+
+print(sorted_words)   # sorts by string length
+---------------------------------------------------------------------
+
+	Explore how functions as parameters contribute to the development of flexible and modular code.
+
+Passing functions as parameters makes programs more flexible because it separates what a piece of code does from how the code is executed. This allows for customization of behavior without modifying the original function. This overall makes code easier to maintain, extend, and adapt to new requirements.
