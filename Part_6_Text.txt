@@ -1,8 +1,0 @@
-Part 6: Coroutine: (10 points) (read section 9.13)
-
-
-	Discuss the concept of coroutines and its significance in programming.
-
-A coroutine is a type of subprogram that can have multiple entry points, all controlled by the coroutine itself. Caller and called coroutines are more equitable. They have the ability to maintain their status between activations. Usually, coroutines are created in an application by a master unit, so that once created, they can execute their initialization code and then return control to the master unit.
-
-	Provide examples demonstrating the use of coroutines in any language; use internet to find the answer (recommend C# or Python).
