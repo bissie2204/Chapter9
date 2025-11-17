@@ -1,0 +1,59 @@
+Part 2: Parameter passing (15 points) (read section 9.5 in textbook)
+
+	Compare and contrast the different parameter passing mechanisms, including pass by value, pass by reference, and pass by name.
+
+When a parameter is passed by value, the actual parameter value is used to initialize the corresponding formal parameter, which then acts as a local variable in the subprogram, which in turn implements in-mode semantics. This is normally implemented by copy because this is the fastest approach. An advantage of this is that for scalars it is fast in linkage cost and access time. A disadvantage of this method is that storage could be overloaded if the parameter is too big.
+
+Pass-by-reference is an implementation model for out-mode parameters. Using this method results in no value being transmitted to the program. This has similar advantages/disadvantages to pass-by-value. There is a possibility of an actual parameter collision.
+
+Pass by name is an inout-mode parameter transmission method that does not correspond to a single implementation model. The actual parameter is textually substituted for the corresponding formal parameter in all its occurrences in the subprogram. This one is very different from the other two mentioned. It is not used as part of a widely used language.
+
+
+	Provide examples for each parameter passing mechanism to illustrate how they work (in any language you want).
+
+C showing pass-by-value:
+#include <stdio.h>
+void f(int x) {
+	x = x +10;
+}
+int main() {
+	int a = 5;
+	f(a);
+	printf(endl, a) // output 5
+}
+
+C++ pass by reference
+
+void g(int &x) {
+	x = x + 10;
+}
+int main() {
+	int a = 5;
+	g)a);
+	cout << a << endl; // output 15
+}
+
+Scala pass by name
+
+def h(x: => Int) = {    
+  println("Eval 1: " + x)
+  println("Eval 2: " + x)
+}
+
+var a = 10
+h(a + 1)  
+
+a = 20
+h(a + 1)
+
+
+
+	Discuss the factors that influence the choice of a parameter passing mechanism in different programming scenarios.
+
+A programmer chooses the best parameter passing mechanism by analyzing the costs and benefits of performance, reliability, conciseness, control, and their specific goals. Value parameters are easy and manageable. Performance is important so that the program can run smoothly without damaging the computer by being overloaded with data. We want our programs to run smoothly and efficiently without damaging anything.
+
+
+
+Notes:
+Parameter-passing methods are how parameters are transmitted to and/or from called subprograms. 
+In mode is a formal parameter model that can receive data from the corresponding actual parameter. Out mode is a model that can transmit data to the actual parameter. Inout mode can do both.
