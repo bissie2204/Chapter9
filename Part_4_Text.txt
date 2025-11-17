@@ -1,0 +1,53 @@
+Part 4: Generic Functions (15 points) (read section 9.10.1-9.10.4 in your textbook)
+	Define and explain the concept of generic functions.
+
+A generic function allows parameters to operate on values of different data types without rewriting the function for each type. The functions uses a placeholder that is filled in when the function is called. 
+
+
+	Compare and contrast generic functions with regular functions (in any language you want).
+
+
+In C++ programs, generic functions are more flexible than regular functions. Also, in generic functions, repetition is eliminated because of the generalized logic, while regular functions may require separate functions or overloading for different types.
+
+
+	Illustrate the use of generic functions with examples in a programming language that supports generic programming.
+-----------------------------------------------------------
+C++
+
+#include <iostream>
+using namespace std;
+
+template <typename T>
+T maxValue(T a, T b) {
+    return (a > b) ? a : b;
+}
+
+int main() {
+    cout << maxValue(3, 7) << endl;        
+    cout << maxValue(2.5, 1.8) << endl;    
+    cout << maxValue('a', 'z') << endl;    
+}
+
+
+
+-----------------------------------------------
+
+#include <iostream>
+using namespace std;
+
+template <class T>
+void swapValues(T &x, T &y) {
+    T temp = x;
+    x = y;
+    y = temp;
+}
+
+int main() {
+    int a = 10, b = 20;
+    swapValues(a, b);      
+    string s1 = "hello", s2 = "world";
+    swapValues(s1, s2);    
+
+    cout << a << " " << b << endl;
+    cout << s1 << " " << s2 << endl;
+}
